@@ -63,7 +63,7 @@ const InfoBar = ({ notifications, subAccountId, className, role }: Props) => {
                 <SheetTitle>Notifications</SheetTitle>
                 <SheetDescription>
                   {(role === 'AGENCY_ADMIN' || role === 'AGENCY_OWNER') && (
-                    <Card className='flex items-center justify-between p-4'>
+                    <Card className='flex items-center justify-between p-4 mb-2'>
                       Current Subaccount
                       <Switch onCheckedChange={handleClick} />
                     </Card>
@@ -71,10 +71,7 @@ const InfoBar = ({ notifications, subAccountId, className, role }: Props) => {
                 </SheetDescription>
               </SheetHeader>
               {allNotifications?.map((notification) => (
-                <div
-                  key={notification.id}
-                  className='flex flex-col gap-y-2 mb-2 overflow-x-scroll text-ellipsis'
-                >
+                <div key={notification.id} className='flex flex-col gap-y-2 mb-2 text-ellipsis'>
                   <div className='flex gap-2'>
                     <Avatar className='w-9 h-9'>
                       <AvatarImage src={notification.User.avatarUrl} alt='Profile Picture' />
